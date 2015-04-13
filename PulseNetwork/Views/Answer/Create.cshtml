@@ -1,0 +1,29 @@
+﻿@model PulseNetwork.Models.Answer
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h4>Your Answer:</h4>
+@using (Html.BeginForm())
+{
+        <div class="form-group">
+            @*<div class="col-md-12">*@
+                @Html.TextAreaFor(model => model.AnswerBody, new { cols = 40, @rows = 5 })
+                @Html.ValidationMessageFor(model => model.AnswerBody, "", new { @class = "text-danger" })
+            @*  </div>*@
+        </div>
+
+        <div class="form-group">
+            <div>
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+

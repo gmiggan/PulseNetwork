@@ -1,0 +1,110 @@
+﻿@model PulseNetwork.Models.Profile
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="http://snipplicious.com/css/bootstrap-3.2.0.min.css">
+    <link rel="stylesheet" type="text/css" href="http://snipplicious.com/css/font-awesome-4.1.0.min.css">
+    <script src="http://snipplicious.com/js/jquery.js"></script>
+    <script src="http://snipplicious.com/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="well panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <img src="~/Content/img/@Html.DisplayFor(model => model.ApplicationUser.UserName)" alt="" class="center-block img-circle img-thumbnail img-responsive">
+
+                        </div>
+                        <!--/col-->
+                        <div class="col-xs-12 col-sm-8">
+                            <h2>@Html.DisplayFor(model => model.ApplicationUser.FullName)</h2>
+                            <p><strong>About: </strong> @Html.DisplayFor(model => model.JobTitle) </p>
+                            <p><strong>Job Title: </strong>@Html.DisplayFor(model => model.Company) </p>
+                            
+                            <p>
+                                <strong>Exp Points: @Html.DisplayFor(model => model.ApplicationUser.ExperiencePoints) </strong>
+                                <div class="progress">
+                                    <div data-percentage="0%" style="width: 50%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </p>
+                        </div>
+                        <!--/col-->
+                        <div class="clearfix"></div>
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong> 14 </strong></h2>
+                            <p><small>Questions</small></p>
+                            <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span>Questions </button>
+                        </div>
+                        <!--/col-->
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong>10</strong></h2>
+                            <p><small>Answers</small></p>
+                            <button class="btn btn-info btn-block"><span class="fa fa-user"></span> Answers </button>
+                        </div>
+                        <!--/col-->
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong>Level @Html.DisplayFor(model => model.ApplicationUser.Level)</strong></h2>
+                            <p><small></small></p>
+                            <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
+                        </div>
+                        <!--/col-->
+                    </div>
+                    <!--/row-->
+                </div>
+                <!--/panel-body-->
+            </div>
+            <!--/panel-->
+
+
+        </div>
+        <!--/row-->
+    </div>
+    <!--/container-->
+    <!--Bio-->
+    <div class="panel panel-default">
+        <div class="panel-heading">Bio</div>
+        <div class="panel-body">
+            A long description about me.
+
+        </div>
+    </div>
+    <!--/Bio-->
+    <div class="container">
+        <div class="row">
+
+            <div class="well panel panel-default">
+                <div class="panel-body">
+                    <h3>Skills<span class="semi-bold"></span></h3>
+                    <p></p>
+                    <br>
+                    <div class="col-md-11">
+                        <div class="progress">
+                            <div data-percentage=" 0%" style="width: 50%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100">HTML</div>
+                        </div>
+                        <div class="progress">
+                            <div data-percentage="0%" style="width: 60%;" class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100">CSS</div>
+                        </div>
+                        <div class="progress">
+                            <div data-percentage="0%" style="width: 40%;" class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100">JQuery</div>
+                        </div>
+                        <div class="progress">
+                            <div data-percentage="0%" style="width: 20%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100">Bootstrap</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+

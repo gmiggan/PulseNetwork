@@ -1,0 +1,149 @@
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\PulseNetwork.dll.config
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\PulseNetwork.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\PulseNetwork.pdb
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Antlr3.Runtime.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Common.Logging.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\CSharp.GitHub.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\EntityFramework.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\EntityFramework.SqlServer.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Newtonsoft.Json.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Owin.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Spring.Rest.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Spring.Social.Core.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Helpers.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Mvc.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Optimization.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Razor.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Deployment.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Razor.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\WebGrease.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\EntityFramework.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\EntityFramework.SqlServer.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Spring.Rest.pdb
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Spring.Rest.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Spring.Social.Core.pdb
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Spring.Social.Core.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Helpers.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Mvc.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Optimization.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.Razor.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Deployment.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Razor.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Antlr3.Runtime.pdb
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Newtonsoft.Json.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.FullName.resources
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.UserTableUpdate.resources
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.Relationship1.resources
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.migration2.resources
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.SKillUpdate.resources
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.csproj.GenerateResource.Cache
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.dll
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.pdb
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.csprojResolveAssemblyReference.cache
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.QUestionSkill.resources
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.sdg.resources
+C:\Users\eoghan\documents\visual studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.df.resources
+D:\fyp\PulseNetwork\PulseNetwork\bin\PulseNetwork.dll.config
+D:\fyp\PulseNetwork\PulseNetwork\bin\PulseNetwork.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\PulseNetwork.pdb
+D:\fyp\PulseNetwork\PulseNetwork\bin\Antlr3.Runtime.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Common.Logging.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\CSharp.GitHub.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\EntityFramework.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\EntityFramework.SqlServer.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Core.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Cookies.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Facebook.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Google.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.OAuth.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Twitter.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Web.Infrastructure.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Newtonsoft.Json.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Owin.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Spring.Rest.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\Spring.Social.Core.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Helpers.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Mvc.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Optimization.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Razor.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Deployment.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Razor.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\WebGrease.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\EntityFramework.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\EntityFramework.SqlServer.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Spring.Rest.pdb
+D:\fyp\PulseNetwork\PulseNetwork\bin\Spring.Rest.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Spring.Social.Core.pdb
+D:\fyp\PulseNetwork\PulseNetwork\bin\Spring.Social.Core.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Helpers.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Mvc.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Optimization.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.Razor.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Deployment.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\System.Web.WebPages.Razor.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Antlr3.Runtime.pdb
+D:\fyp\PulseNetwork\PulseNetwork\bin\Newtonsoft.Json.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Core.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Facebook.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Cookies.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.OAuth.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Google.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Twitter.xml
+D:\fyp\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.FullName.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.UserTableUpdate.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.Relationship1.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.migration2.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.SKillUpdate.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.QUestionSkill.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.sdg.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.df.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.Experince.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.csproj.GenerateResource.Cache
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.dll
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.pdb
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.csprojResolveAssemblyReference.cache
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.PointsUpdate.resources
+D:\fyp\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.Count.resources
+D:\fyp\PulseNetwork\PulseNetwork\bin\SendGrid.SmtpApi.dll
+D:\fyp\PulseNetwork\PulseNetwork\bin\SendGridMail.dll

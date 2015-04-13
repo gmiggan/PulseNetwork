@@ -1,0 +1,171 @@
+﻿@model PulseNetwork.Models.Question
+
+@{
+    ViewBag.Title = "View";
+    PulseNetwork.Models.Answer ans = new PulseNetwork.Models.Answer();
+    ans.QuestionID = this.Model.ID;
+}
+
+@{
+    if (IsPost)
+    {
+        string answer = Request.Form["answer"];
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Blog Post - Start Bootstrap Template</title>
+    <!-- Bootstrap Core CSS -->
+    @*<link href="css/bootstrap.min.css" rel="stylesheet">*@
+    <!-- Custom CSS -->
+    @*<link href="css/blog-post.css" rel="stylesheet">*@
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.upvote.js"></script>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.upvote.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        div.upvote {
+            float: left;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Blog Post -->
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.Answers.Count)
+                <!-- Title -->
+                <h1>@Html.DisplayFor(model => model.QuestionTitle)</h1>
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">@Html.DisplayFor(model => model.PosterDetails().FullName)</a>
+                </p>
+                <hr>
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on @Html.DisplayFor(model => model.DatePosted) at @Html.DisplayFor(model => model.TimePosted)</p>
+                <hr>
+
+                <!-- Post Content -->
+                <div style="overflow: auto;">
+                    <div id="questionVote" class="upvote">
+                        <a class="upvote"></a>
+                        <span class="count">@Html.DisplayFor(model => model.Count)</span>
+                        <a class="downvote"></a>
+                    </div>
+                    <p class="lead">@Html.DisplayFor(model => model.QuestionBody)</p>
+                </div>
+                <hr>
+
+                <!-- Comments Form -->
+                @*   <form>
+                        <textarea name="editor1" id="editor1" rows="10" cols="80">
+
+                        </textarea>
+                        <script>
+                            // Replace the <textarea id="editor1"> with a CKEditor
+                            // instance, using default configuration.
+                            CKEDITOR.replace('editor1', {
+                                extraPlugins: 'codesnippet',
+                                codeSnippet_theme: 'monokai_sublime'
+                            });
+                        </script>
+                    </form>
+                *@
+
+                @if(User.Identity.IsAuthenticated)
+                {
+                @Html.Action("Create", "Answer", new { questionId = Model.ID })
+                }
+                <div id="answers">
+
+                    <!-- Posted Comments -->
+                    @foreach (var item in Model.Answers)
+                    {
+                    <!-- Comment -->
+                        <div style="overflow: auto;">
+                            <div id="answervote-@item.ID" class="upvote">
+                                <a class="upvote"></a>
+                                <span class="count">@Html.DisplayFor(modelItem => item.Count)</span>
+                                <a class="downvote"></a>
+                            </div>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="http://placehold.it/64x64" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        @Html.DisplayFor(modelItem => item.ApplicationUser.UserName)
+                                        <small>August 25, 2014 at 9:30 PM</small>
+                                    </h4>
+                                    @Html.DisplayFor(modelItem => item.AnswerBody)
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <!-- Nested Comment
+                      <div class="media">
+                          <a class="pull-left" href="#">
+                              <img class="media-object" src="http://placehold.it/64x64" alt="">
+                          </a>
+                          <div class="media-body">
+                              <h4 class="media-heading">
+                                  Nested Start Bootstrap
+                                  <small>August 25, 2014 at 9:30 PM</small>
+                              </h4>
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                          </div>
+                      </div>
+                End Nested Comment -->
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var upvotecallback = function (data) {
+            $.ajax({
+                url: '../../PulseWebService.asmx/UpdateVote',
+                type: 'POST',
+                data: { id: data.id, score: data.count, type: data.type },
+                success: function (d) {
+                }
+            });
+        };
+
+        var questionId = $('#ID').val(); //Question Id
+        $('#questionVote').upvote({ id: questionId, type: "q", callback: upvotecallback });
+
+        var answersCount = $('#Answers_Count').val(); //Answers
+        
+        for (var i = 0; i < answersCount; i++) {
+            var divId = "#answervote-" + i;
+            $(divId).upvote({ id: i, type: "a", callback: upvotecallback });
+        }
+
+    </script>
+
+</body>
+
+</html>
