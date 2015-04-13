@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PulseNetwork.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System.Net;
 
 namespace PulseNetwork.Utils
 {
     public class BusinessLogic
     {
+        ApplicationDbContext db = new ApplicationDbContext();
+
         public UserSkill FindUserSkill(int skillid, string userid, ApplicationDbContext db)
         {
             
@@ -44,6 +49,45 @@ namespace PulseNetwork.Utils
                 context.SaveChanges();
 
             }
+        }
+
+        public List<Question> availableQuestions(String userId)
+        {
+            ApplicationUser user = db.Users.Find(userId);
+            List<Question> availableQuestions = new List<Question>();
+            List<Question> allQuestions = db.Questions.ToList();
+            foreach(var question in allQuestions)
+            { 
+                
+                if(maxLevel(question) <= user.Level)
+                {
+                    availableQuestions.Add(question);
+                }
+            }
+            return availableQuestions;
+        }
+
+        public int maxLevel(Question question)
+        {
+            var level = 0;
+            try
+            {
+                level = question.ApplicationUser.Level;
+            }
+            catch
+            {
+                return 1000;
+            }
+            TimeSpan timeposted = (TimeSpan) question.TimePosted;
+            TimeSpan currentTime = new TimeSpan();
+            var maximumlevel = level;
+            TimeSpan duration = currentTime - timeposted;
+            for (int i = 0; i <= duration.TotalHours; i++ )
+            {
+                maximumlevel++;
+            }
+            return maximumlevel;
+
         }
 
     }

@@ -6,17 +6,25 @@ using System.Web.Mvc;
 using PulseNetwork.Models;
 using System.Net;
 using Microsoft.AspNet.Identity;
+using PulseNetwork.Utils;
 
 namespace PulseNetwork.Controllers
 {
     public class QuestionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        public BusinessLogic bl = new BusinessLogic();
         
 
-        public ActionResult Index()
+        public ActionResult Index(string show)
         {
-            return View(db.Questions.OrderByDescending(x => x.DatePosted).ToList());  
+            if(show == "available")
+            {
+                return View(bl.availableQuestions(User.Identity.GetUserId()).OrderByDescending(x => x.DatePosted));
+            }
+            
+            return View(db.Questions.OrderByDescending(x => x.DatePosted).ToList());
+            
         }
 
         // GET: /Questions/Details/id

@@ -24,8 +24,9 @@
                         Filter Questions <i class="fa fa-filter"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Available to Answer</a></li>
-                        <li><a href="#">All Questions</a></li>
+                        <li>@Html.ActionLink("Available to Answer", "Index", new { show = "available" })"</li>
+                        
+                        <li>@Html.ActionLink("All Questions", "Index")</a></li>
                     </ul>
                 </div>
             </div>
