@@ -22,6 +22,23 @@ namespace PulseNetwork.Models
         public virtual Skill Skill { get; set; }
 
 
+        public String getSkillName()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Skill skill = (Skill)(from u in context.Skills
+                                                  where u.ID == this.skillID
+                                                      
+                                                  select u).SingleOrDefault();
+
+
+
+                return skill.skillName;
+
+            }
+
+        }
+
 
 
         public UserSkill FindUserSkill(int skillid, string userid)

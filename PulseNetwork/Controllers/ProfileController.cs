@@ -6,13 +6,17 @@ using System.Web.Mvc;
 using PulseNetwork.Models;
 using Microsoft.AspNet.Identity;
 using System.Diagnostics;
+using System.Data.Entity;
+using Newtonsoft.Json;
+using PulseNetwork.Utils;
 
 namespace PulseNetwork.Controllers
 {
     public class ProfileController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
-        
+        BusinessLogic bl = new BusinessLogic();
+        String userID;
         
         //GET Profile
         public ActionResult Index()
@@ -31,8 +35,9 @@ namespace PulseNetwork.Controllers
         //Profile/ViewProfile/id
         public ActionResult ViewProfile(string id)
         {
-
+            
             Profile profile = db.Profiles.Find(id);
+            ViewBag.DataPoints = JsonConvert.SerializeObject(skillchart(id));
             
             if (profile == null)
             {
@@ -40,17 +45,27 @@ namespace PulseNetwork.Controllers
             }
             return View(profile);
         }
+        
+        public ActionResult Edit(String id)
+        {
+            Profile profile = db.Profiles.Find(id);
+            return View(profile);
+        }
+
+
 
         // POST: /Profile/Edit
         [HttpPost]
         public ActionResult Edit(Profile profile)
         {
+            
             if (ModelState.IsValid)
             {
-                db.Profiles.Add(profile);
+                db.Entry(profile).State = EntityState.Modified;
                 db.SaveChanges();
+                
                 string redirectString = "View Profile" + profile.UserID + "";
-                return RedirectToAction(redirectString);
+                return RedirectToAction("ViewProfile", new {id = profile.UserID});
             }
 
             return View(profile);
@@ -75,6 +90,33 @@ namespace PulseNetwork.Controllers
             return View(profile);
         }
 
+        public ActionResult AjaxJSON()
+        {
+            //ViewBag.DataPoints = new DataContractJsonSerializer(dataPoints.GetType()).;
+            ViewBag.DataPoints = JsonConvert.SerializeObject("");
+
+            return View();
+        }
+
+        public ContentResult JSONData()
+        {
+            return Content(JsonConvert.SerializeObject(""), "application/json");
+        }
+
+        public List<DataPoint> skillchart(string id)
+        {
+            var skills = bl.UserSkillList(id);
+            List<DataPoint> _dataPoints = new List<DataPoint>();
+            foreach (var skill in skills)
+            {
+                var dp = new DataPoint(skill.getSkillName(), skill.Score);
+                _dataPoints.Add(dp);
+            }
+
+            return _dataPoints;
+        }
 
     }
+
+
 }

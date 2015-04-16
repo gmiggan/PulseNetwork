@@ -1,7 +1,10 @@
 ﻿@model PulseNetwork.Models.Profile
-
+@using PulseNetwork.Utils
 @{
     ViewBag.Title = "Profile";
+    var bl = new BusinessLogic();
+    var user = Model.ApplicationUser;
+    var skills = bl.UserSkillList(user.Id);
 }
 
 <!doctype html>
@@ -12,6 +15,39 @@
     <link rel="stylesheet" type="text/css" href="http://snipplicious.com/css/font-awesome-4.1.0.min.css">
     <script src="http://snipplicious.com/js/jquery.js"></script>
     <script src="http://snipplicious.com/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/jquery.canvasjs.js"></script>
+    <script src="~/Scripts/jquery.canvasjs.min.js"></script>
+        <script type="text/javascript">
+    window.onload = function () {
+
+        //Better to construct options first and then pass it as a parameter
+        var chart = new CanvasJS.Chart("chartContainer", {
+
+            title: {
+                text: "Skills"
+            },
+            data: [//array of dataSeries
+              { //dataSeries object
+
+                  /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                  type: "column",
+                  dataPoints: @Html.Raw(ViewBag.DataPoints)
+                 @*        { label: "@skills[0].getSkillName()", y: @skills[0].Score },
+                          { label: "@skills[1].getSkillName()", y: @skills[1].Score },
+                          { label: "@skills[2].getSkillName()", y: @skills[2].Score },*@
+
+
+
+              }
+            ]
+        });
+
+        chart.render();
+
+    }
+</script>
+    
 </head>
 <body>
     <div class="container">
@@ -21,8 +57,8 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 text-center">
-                            <img src="~/Content/img/@Html.DisplayFor(model => model.ApplicationUser.UserName)" alt="" class="center-block img-circle img-thumbnail img-responsive">
-
+                            <img src="~/Content/img/@Html.DisplayFor(model => model.ApplicationUser.Picture)" alt="" class="center-block img-circle img-thumbnail img-responsive">
+                            @Html.ActionLink("Edit Profile", "Edit", new { id = Model.UserID })
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-8">
@@ -73,12 +109,20 @@
     <div class="panel panel-default">
         <div class="panel-heading">Bio</div>
         <div class="panel-body">
-            A long description about me.
+            @Html.DisplayFor(model => model.Bio)
 
         </div>
     </div>
     <!--/Bio-->
-    <div class="container">
+    
+
+     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+   
+</body>
+</html>
+
+
+    @*<div class="container">
         <div class="row">
 
             <div class="well panel panel-default">
@@ -104,7 +148,7 @@
             </div>
 
         </div>
-    </div>
-</body>
-</html>
+    </div>*@
+
+
 

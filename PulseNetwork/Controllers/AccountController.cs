@@ -77,7 +77,7 @@ namespace PulseNetwork.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("ViewProfile", "Profile", new { id = @User.Identity.GetUserId() });
+                    return RedirectToAction("Index", "Question");
                     
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -167,7 +167,9 @@ namespace PulseNetwork.Controllers
                     var profile = new Profile { UserID = applicationuser.Id, Company = "", Bio = "", JobTitle = "", Location = "" };
                     db.Profiles.Add(profile);
                     db.SaveChanges();
-                    return RedirectToAction("View/" + profile.UserID, "Profile");
+                    return RedirectToAction("Index", "Question");
+                    
+                    //return RedirectToAction("View/" + profile.UserID, "Profile");
                     
                     
                     

@@ -1,9 +1,11 @@
 ﻿@model PulseNetwork.Models.Question
+@using PulseNetwork.Utils
 
 @{
     ViewBag.Title = "View";
     PulseNetwork.Models.Answer ans = new PulseNetwork.Models.Answer();
     ans.QuestionID = this.Model.ID;
+    BusinessLogic bl = new BusinessLogic();
 }
 
 @{
@@ -116,7 +118,7 @@
                                 <div class="media-body">
                                     <h4 class="media-heading">
                                         @Html.DisplayFor(modelItem => item.ApplicationUser.UserName)
-                                        <small>August 25, 2014 at 9:30 PM</small>
+                                        
                                     </h4>
                                     @Html.DisplayFor(modelItem => item.AnswerBody)
                                 </div>

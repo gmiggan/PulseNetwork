@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.iconHome h1 {
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+.navIcon {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

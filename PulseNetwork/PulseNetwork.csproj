@@ -69,6 +69,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -239,6 +241,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MovieModel.cs" />
@@ -529,6 +532,7 @@
     <Content Include="Content\close.gif" />
     <Content Include="Content\img\avatar.png" />
     <Content Include="Content\img\beaa8256-a42e-48eb-bad1-5eadb4404c0f.jpg" />
+    <Content Include="Content\img\pulse_icon.png" />
     <Content Include="Content\img\sprites-stackoverflow.png" />
     <Content Include="Content\jquery.upvote.css" />
     <Content Include="Content\json.asp" />
@@ -551,11 +555,16 @@
     <Content Include="ckeditor\samples\sample_posteddata.php" />
     <Content Include="ckeditor\skins\moono\readme.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\canvasjs.js" />
+    <Content Include="Scripts\excanvas.js" />
     <Content Include="Scripts\JavaScript1.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Content\jquery-ui.css" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery.canvasjs.js" />
+    <Content Include="Scripts\jquery.canvasjs.min.js" />
     <Content Include="Scripts\jquery.upvote.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -630,7 +639,7 @@
     <Content Include="Views\Skill\Edit.cshtml" />
     <Content Include="Views\Skill\Index.cshtml" />
     <Content Include="Views\User\InitialSetUp.cshtml" />
-    <Content Include="Views\Profile\View.cshtml" />
+    <Content Include="Views\Profile\ViewProfile.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Answer\View.cshtml" />
     <Content Include="Views\Skill\Tag.cshtml" />
@@ -638,7 +647,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_LocalResources\" />
-    <Folder Include="Service\" />
+    <Folder Include="Scripts\Service\" />
     <Folder Include="Views\Movie\" />
   </ItemGroup>
   <ItemGroup>

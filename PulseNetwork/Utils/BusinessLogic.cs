@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using PulseNetwork.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using System.Net;
 
 namespace PulseNetwork.Utils
 {
@@ -65,6 +61,30 @@ namespace PulseNetwork.Utils
                 }
             }
             return availableQuestions;
+        }
+
+        public List<UserSkill> UserSkillList(String userid)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                List<UserSkill> userskills = (List<UserSkill>)(from u in context.UserSkills
+                                                               where u.UserID == userid
+                                                               select u).ToList();
+
+
+                return userskills;
+
+            }
+        }
+        
+        public bool canAnswer(Question question, String userid)
+        {
+            ApplicationUser user = db.Users.Find(userid);
+            if (maxLevel(question) <= user.Level)
+            {
+                return true;
+            }
+            else return false;
         }
 
         public int maxLevel(Question question)
