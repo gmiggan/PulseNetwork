@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PulseNetwork.Models.Answer>
+
+
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+
+
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<div class="container" style="padding-top: 60px;">
+    <div class="panel panel-default panel-order">
+        <div class="panel-heading">
+            <strong>User's Answers</strong>
+        </div>
+        <div class="panel-body">
+
+            @foreach (var item in Model)
+            {
+                <div class="row">
+                    <div class="col-md-1"><img src="~/Content/img/@Html.DisplayFor(modelItem => item.Question.PosterDetails().Picture)" class="media-object"></div>
+                    <div class="col-md-11">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right"><span>Level: @item.Question.PosterDetails().Level  </span><a href="~/Question/ViewQuestion/@Html.DisplayFor(modelItem => item.ID)" class="btn btn-primary btn-xs"><i class="fa fa-certificate"></i> Answer</a></div>
+                                <a href="~/Question/ViewQuestion/@Html.DisplayFor(modelItem => item.ID)"><span><strong>@Html.DisplayFor(modelItem => item.Question.QuestionTitle)</strong></span></a>
+                                @foreach (var tag in item.Question.getQuestionSkills())
+                                {
+                                    <span class="label label-info">@tag.skillName</span>
+                                }
+                                <br />
+                                <span>@Html.DisplayFor(modelItem => item.AnswerBody)</span>
+                                <br />
+                                @*  <span>Answers: @item.Answers.Count() </span>*@
+                                <br />
+
+                            </div>
+                            <div class="col-md-12">
+                                question posted: @Html.DisplayFor(modelItem => item.Question.DatePosted) by <a href="#">@Html.DisplayFor(modelItem => item.Question.PosterDetails().FullName) </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="panel-footer">
+                <ul class="pagination">
+                    <li class="active"><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

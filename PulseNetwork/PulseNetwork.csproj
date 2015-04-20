@@ -643,6 +643,8 @@
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Answer\View.cshtml" />
     <Content Include="Views\Skill\Tag.cshtml" />
+    <Content Include="Views\Question\UserQuestions.cshtml" />
+    <Content Include="Views\Answer\UserAnswers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

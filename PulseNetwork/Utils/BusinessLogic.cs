@@ -47,6 +47,25 @@ namespace PulseNetwork.Utils
             }
         }
 
+
+        public List<Question> usersQuestions(string userid)
+        {
+            
+            using (var context = new ApplicationDbContext())
+            {
+                List<Question> questions = (List<Question>)(from u in context.Questions
+                                                               where u.UserID == userid
+                                                               select u).ToList();
+
+                return questions;
+
+             
+
+            }
+        }
+
+
+
         public List<Question> availableQuestions(String userId)
         {
             ApplicationUser user = db.Users.Find(userId);

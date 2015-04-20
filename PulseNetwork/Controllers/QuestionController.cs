@@ -27,6 +27,17 @@ namespace PulseNetwork.Controllers
             
         }
 
+        public ActionResult UserQuestions(string id)
+        {
+
+            List<Question> userQuestions = bl.usersQuestions(id);
+            var results = db.Questions.Where(u=> u.UserID == id);
+            return View(results);
+
+        }
+
+
+
         // GET: /Questions/Details/id
         public ActionResult Details(int id)
         {
