@@ -39,7 +39,7 @@
 
 
 
-              }
+                  }
             ]
         });
 
@@ -78,13 +78,13 @@
                         <div class="col-xs-12 col-sm-4">
                             <h2><strong> 14 </strong></h2>
                             <p><small>Questions</small></p>
-                            <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span>Questions </button>
+                            <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span>@Html.ActionLink("Questions", "UserQuestions", "Question", new { id = Model.ApplicationUser.Id }, null)</button>
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-4">
                             <h2><strong>10</strong></h2>
                             <p><small>Answers</small></p>
-                            <button class="btn btn-info btn-block"><span class="fa fa-user"></span> Answers </button>
+                            <button class="btn btn-info btn-block"><span class="fa fa-user"></span>@Html.ActionLink("Answers", "UserAnswers", "Answer", new { id = Model.ApplicationUser.Id }, null) </button>
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-4">

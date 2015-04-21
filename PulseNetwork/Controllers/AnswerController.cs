@@ -22,7 +22,7 @@ namespace PulseNetwork.Controllers
         {
 
            // List<Question> userQuestions = bl.usersQuestions(id);
-            var results = db.Answers.Where(u => u.UserID == id);
+            var results = db.Answers.Where(u => u.UserID == id).ToList() ;
             return View(results);
 
         }
