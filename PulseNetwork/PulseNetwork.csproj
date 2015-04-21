@@ -190,6 +190,7 @@
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WorkspacesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,10 +238,23 @@
     <Compile Include="Migrations\201502251826343_Count .Designer.cs">
       <DependentUpon>201502251826343_Count .cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504211757411_mii.cs" />
+    <Compile Include="Migrations\201504211757411_mii.Designer.cs">
+      <DependentUpon>201504211757411_mii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504212033344_mig.cs" />
+    <Compile Include="Migrations\201504212033344_mig.Designer.cs">
+      <DependentUpon>201504212033344_mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504212041494_swefw.cs" />
+    <Compile Include="Migrations\201504212041494_swefw.Designer.cs">
+      <DependentUpon>201504212041494_swefw.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\WorkspacePageModel.cs" />
     <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -250,6 +264,8 @@
     <Compile Include="Models\QuestionSkillModel.cs" />
     <Compile Include="Models\SkillModel.cs" />
     <Compile Include="Models\UserSkillModel.cs" />
+    <Compile Include="Models\WorkspaceModel.cs" />
+    <Compile Include="Models\WorkspacePost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PulseDbContext.cs" />
     <Compile Include="PulseWebService.asmx.cs">
@@ -645,6 +661,9 @@
     <Content Include="Views\Skill\Tag.cshtml" />
     <Content Include="Views\Question\UserQuestions.cshtml" />
     <Content Include="Views\Answer\UserAnswers.cshtml" />
+    <Content Include="Views\Workspaces\Create.cshtml" />
+    <Content Include="Views\Workspaces\View.cshtml" />
+    <Content Include="Views\Workspaces\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -692,6 +711,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502251826343_Count .resx">
       <DependentUpon>201502251826343_Count .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504211757411_mii.resx">
+      <DependentUpon>201504211757411_mii.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504212033344_mig.resx">
+      <DependentUpon>201504212033344_mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504212041494_swefw.resx">
+      <DependentUpon>201504212041494_swefw.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

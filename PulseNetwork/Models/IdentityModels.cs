@@ -48,6 +48,9 @@ namespace PulseNetwork.Models
         public DbSet<Skill> Skills { get; set; }
         public DbSet<UserSkill> UserSkills { get; set; }
         public DbSet<QuestionSkill> QuestionSkills { get; set; }
+        public DbSet<Workspace> Workspaces { get; set; }
+        public DbSet<WorkspacePage> WorkspacesPages { get; set; }
+        public DbSet<WorkspacePost> WorkspacePosts { get; set; }
 
         public static ApplicationDbContext Create()
         {
