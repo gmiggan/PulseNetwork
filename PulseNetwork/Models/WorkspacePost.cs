@@ -16,7 +16,7 @@ namespace PulseNetwork.Models
         public DateTime TimePosted { get; set; }
         public String postDetails { get; set; }
         [ForeignKey("workspaceId")]
-        public virtual WorkspacePage workspacePage { get; set; }
+        public virtual WorkspaceInvite workspaceInvite { get; set; }
         [ForeignKey("posterId")]
         public virtual ApplicationUser poster { get; set; }
     }

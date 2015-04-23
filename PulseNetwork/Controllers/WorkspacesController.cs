@@ -17,7 +17,7 @@ namespace PulseNetwork.Controllers
         // GET: Workspaces
         public ActionResult Index()
         {
-            var workspaces = db.Workspaces.Include(w => w.creator);
+            var workspaces = db.Workspaces.Include(x => x.creator);
             return View(workspaces.ToList());
         }
 

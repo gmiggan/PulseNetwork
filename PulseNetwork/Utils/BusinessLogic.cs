@@ -25,6 +25,23 @@ namespace PulseNetwork.Utils
 
         }
 
+        public List<ApplicationUser> FindUsersInWorkspace(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                List<WorkspaceInvite> wi = (List<WorkspaceInvite>)(from u in context.WorkspacesInvites
+                                                            where u.workspaceid == id
+                                                            select u).ToList();
+                List<ApplicationUser> users = new List<ApplicationUser>();
+                foreach(var item in wi)
+                {
+                    users.Add(db.Users.Find(item.userId));
+                }
+
+                return users;
+
+            }
+        }
 
         public void FindSumOfUserSkillPoints(string userid)
         {

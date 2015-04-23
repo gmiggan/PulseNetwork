@@ -227,3 +227,4 @@ C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwo
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.mii.resources
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.mig.resources
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.swefw.resources
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.hello.resources

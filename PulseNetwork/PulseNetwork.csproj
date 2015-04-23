@@ -250,11 +250,15 @@
     <Compile Include="Migrations\201504212041494_swefw.Designer.cs">
       <DependentUpon>201504212041494_swefw.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504231457428_hello.cs" />
+    <Compile Include="Migrations\201504231457428_hello.Designer.cs">
+      <DependentUpon>201504231457428_hello.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\Class1.cs" />
-    <Compile Include="Models\WorkspacePageModel.cs" />
+    <Compile Include="Models\WorkspaceInviteModel.cs" />
     <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -596,7 +600,9 @@
     <Content Include="Scripts\textboxlist.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="PulseWebService.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -720,6 +726,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504212041494_swefw.resx">
       <DependentUpon>201504212041494_swefw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504231457428_hello.resx">
+      <DependentUpon>201504231457428_hello.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

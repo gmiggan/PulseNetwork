@@ -29,6 +29,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (@User.Identity.IsAuthenticated) {
                     <li>@Html.ActionLink("Profile", "ViewProfile","Profile" , new { id = @User.Identity.GetUserId() }, null)</li>
+                    <li>@Html.ActionLink("Workspaces", "Index", "Workspaces")</li>
                     }
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Questions", "Index", "Question")</li>

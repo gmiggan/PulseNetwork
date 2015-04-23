@@ -15,6 +15,7 @@ namespace PulseNetwork.Models
         public string Picture { get; set; }
         public long ExperiencePoints { get; set; }
         public int Level { get { return 1 + (int)Math.Floor(Math.Pow(ExperiencePoints, 1 / 3.0)); } }
+        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -49,7 +50,7 @@ namespace PulseNetwork.Models
         public DbSet<UserSkill> UserSkills { get; set; }
         public DbSet<QuestionSkill> QuestionSkills { get; set; }
         public DbSet<Workspace> Workspaces { get; set; }
-        public DbSet<WorkspacePage> WorkspacesPages { get; set; }
+        public DbSet<WorkspaceInvite> WorkspacesInvites { get; set; }
         public DbSet<WorkspacePost> WorkspacePosts { get; set; }
 
         public static ApplicationDbContext Create()

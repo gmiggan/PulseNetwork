@@ -1,4 +1,9 @@
 ﻿@model IEnumerable<PulseNetwork.Models.Workspace>
+@using PulseNetwork.Utils
+@{
+    BusinessLogic bl = new BusinessLogic();
+}
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -6,10 +11,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.creator.FullName)
+            Workspace Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            Shared With
         </th>
         <th></th>
     </tr>
@@ -17,10 +22,14 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.creator.FullName)
+            @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.name)
+            @foreach(var user in bl.FindUsersInWorkspace(item.id))
+            { 
+            @Html.DisplayFor(modelItem => user.UserName)  
+            }
+            
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

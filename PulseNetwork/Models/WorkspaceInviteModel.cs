@@ -7,7 +7,7 @@ using System.Web;
 
 namespace PulseNetwork.Models
 {
-    public class WorkspacePage
+    public class WorkspaceInvite
     {
         [Key]
         public int id { get; set; }
