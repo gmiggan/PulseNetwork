@@ -1,0 +1,54 @@
+﻿@model PulseNetwork.Models.Workspace
+
+<div>
+    <h4>Workspace</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Creator:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creator.FullName)
+        </dd>
+
+        <dt>
+            Workspace Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+    </dl>
+
+    <h3>Posts:</h3>
+    @foreach (var item in Model.posts)
+    {
+                    <!-- Comment -->
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://placehold.it/64x64" alt="">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">
+                @Html.DisplayFor(modelItem => item.poster.UserName)
+
+            </h4>
+            @Html.DisplayFor(modelItem => item.postDetails)
+        </div>
+    </div>
+
+                
+           
+    }
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.Action("Create", "WorkspacePosts", new { workspaceid = Model.id })
+    }
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

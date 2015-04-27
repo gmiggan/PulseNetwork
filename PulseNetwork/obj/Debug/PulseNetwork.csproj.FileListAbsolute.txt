@@ -209,7 +209,6 @@ C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwo
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.csprojResolveAssemblyReference.cache
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.FullName.resources
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.UserTableUpdate.resources
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.Relationship1.resources
@@ -228,3 +227,11 @@ C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwo
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.mig.resources
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.swefw.resources
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.hello.resources
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.n.resources
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.dgdh.resources
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.kgh.resources
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.wegrt.resources
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.SignalR.SystemWeb.xml

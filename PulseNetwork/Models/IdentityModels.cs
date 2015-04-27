@@ -15,7 +15,6 @@ namespace PulseNetwork.Models
         public string Picture { get; set; }
         public long ExperiencePoints { get; set; }
         public int Level { get { return 1 + (int)Math.Floor(Math.Pow(ExperiencePoints, 1 / 3.0)); } }
-        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

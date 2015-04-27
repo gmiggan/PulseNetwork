@@ -53,7 +53,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SendGrid.SmtpApi">
       <HintPath>..\packages\SendGrid.SmtpApi.1.2.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
     </Reference>
@@ -131,9 +141,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -190,6 +197,7 @@
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WorkspacePostsController.cs" />
     <Compile Include="Controllers\WorkspacesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,10 +262,28 @@
     <Compile Include="Migrations\201504231457428_hello.Designer.cs">
       <DependentUpon>201504231457428_hello.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504241120147_n.cs" />
+    <Compile Include="Migrations\201504241120147_n.Designer.cs">
+      <DependentUpon>201504241120147_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504251455293_dgdh.cs" />
+    <Compile Include="Migrations\201504251455293_dgdh.Designer.cs">
+      <DependentUpon>201504251455293_dgdh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504251554349_kgh.cs" />
+    <Compile Include="Migrations\201504251554349_kgh.Designer.cs">
+      <DependentUpon>201504251554349_kgh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504251713427_wegrt.cs" />
+    <Compile Include="Migrations\201504251713427_wegrt.Designer.cs">
+      <DependentUpon>201504251713427_wegrt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\QuestionModelHub.cs" />
+    <Compile Include="Models\QuestionTicker.cs" />
     <Compile Include="Models\WorkspaceInviteModel.cs" />
     <Compile Include="Models\DataPoint.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -585,6 +611,8 @@
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery.canvasjs.js" />
     <Content Include="Scripts\jquery.canvasjs.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="Scripts\jquery.upvote.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -592,6 +620,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\mootools-beta-1.2b1.js" />
+    <Content Include="Scripts\question-ticker.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\summernote.js" />
@@ -668,8 +697,9 @@
     <Content Include="Views\Question\UserQuestions.cshtml" />
     <Content Include="Views\Answer\UserAnswers.cshtml" />
     <Content Include="Views\Workspaces\Create.cshtml" />
-    <Content Include="Views\Workspaces\View.cshtml" />
+    <Content Include="Views\Workspaces\Details.cshtml" />
     <Content Include="Views\Workspaces\Index.cshtml" />
+    <Content Include="Views\WorkspacePosts\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -729,6 +759,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504231457428_hello.resx">
       <DependentUpon>201504231457428_hello.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504241120147_n.resx">
+      <DependentUpon>201504241120147_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504251455293_dgdh.resx">
+      <DependentUpon>201504251455293_dgdh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504251554349_kgh.resx">
+      <DependentUpon>201504251554349_kgh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504251713427_wegrt.resx">
+      <DependentUpon>201504251713427_wegrt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -19,7 +19,8 @@ namespace PulseNetwork.Models
         public String creatorID { get; set; }
         [ForeignKey("creatorID")]
         public virtual ApplicationUser creator { get; set; }
-        public virtual List<ApplicationUser> users { get; set; }
+        public virtual ICollection<ApplicationUser> users { get; set; }
+        public virtual ICollection<WorkspacePost> posts { get; set; }
     
     }
 }

@@ -7,6 +7,7 @@ using System.Web;
 
 namespace PulseNetwork.Models
 {
+    [Serializable]
     public class Answer
     {
         public int ID { get; set; }
@@ -19,7 +20,6 @@ namespace PulseNetwork.Models
         public int Count { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual Question Question { get; set; }
-
 
         public ApplicationUser findUserById(int answerId)
         {
@@ -38,9 +38,15 @@ namespace PulseNetwork.Models
 
         public List<Skill> getQuestionSkills()
         {
-            return this.Question.getQuestionSkills().ToList();
-        }
+            using (var context = new ApplicationDbContext())
+            {
+                Question question = (Question)(from q in context.Questions
+                                         where q.ID == this.QuestionID
+                                         select q).SingleOrDefault();
 
+                return question.getQuestionSkills().ToList();
+            }
+        }
     }
 
     public class AnswerDbContext : PulseDbContext

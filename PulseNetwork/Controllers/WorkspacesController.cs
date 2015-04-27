@@ -7,18 +7,24 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PulseNetwork.Models;
+using Microsoft.AspNet.Identity;
+using System.Diagnostics;
+using System.Data.Entity;
+using Newtonsoft.Json;
+using PulseNetwork.Utils;
 
 namespace PulseNetwork.Controllers
 {
     public class WorkspacesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        public BusinessLogic bl = new BusinessLogic();
         // GET: Workspaces
         public ActionResult Index()
         {
+            var myWorkspaces = bl.FindUsersWorkspace(User.Identity.GetUserId());
             var workspaces = db.Workspaces.Include(x => x.creator);
-            return View(workspaces.ToList());
+            return View(myWorkspaces.ToList());
         }
 
         // GET: Workspaces/Details/5
@@ -39,8 +45,8 @@ namespace PulseNetwork.Controllers
         // GET: Workspaces/Create
         public ActionResult Create()
         {
-            ViewBag.creatorID = new SelectList(db.Users, "Id", "FullName");
-            return View();
+           
+            return View(new Workspace());
         }
 
         // POST: Workspaces/Create
@@ -52,7 +58,15 @@ namespace PulseNetwork.Controllers
         {
             if (ModelState.IsValid)
             {
+                String userid = User.Identity.GetUserId();
+                workspace.creatorID = userid;
+                //workspace.users.Add(db.Users.Find(userid));
                 db.Workspaces.Add(workspace);
+                db.SaveChanges();
+                WorkspaceInvite invite = new WorkspaceInvite();
+                invite.userId = userid;
+                invite.workspaceid = workspace.id;
+                db.WorkspacesInvites.Add(invite);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

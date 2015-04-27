@@ -11,6 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PulseNetwork.Models
 {
+    [Serializable]
     public class Question
     {
         [Key]

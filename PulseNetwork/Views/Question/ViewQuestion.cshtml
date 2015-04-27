@@ -1,5 +1,6 @@
 ﻿@model PulseNetwork.Models.Question
 @using PulseNetwork.Utils
+@using Newtonsoft.Json
 
 @{
     ViewBag.Title = "View";
@@ -48,6 +49,22 @@
 
 </head>
 <body>
+
+    <script type="text/javascript">
+
+        var answerIdArray = [];
+
+        var model = @Html.Raw(JsonConvert.SerializeObject(this.Model, Formatting.Indented,
+        new JsonSerializerSettings {
+            PreserveReferencesHandling = PreserveReferencesHandling.Objects
+        }));
+
+        for (var item in model.Answers) {
+            var answer = model.Answers[item];
+            answerIdArray.push(answer.ID);
+        }
+
+    </script>
 
     <!-- Page Content -->
     <div class="container">
@@ -101,70 +118,77 @@
                 }
                 <div id="answers">
 
-                    <!-- Posted Comments -->
-                    @foreach (var item in Model.Answers)
+            <!-- Posted Comments -->
+            @foreach (var item in Model.Answers)
                     {
                     <!-- Comment -->
                         <div style="overflow: auto;">
-                            <div id="answervote-@item.ID" class="upvote">
-                                <a class="upvote"></a>
-                                <span class="count">@Html.DisplayFor(modelItem => item.Count)</span>
-                                <a class="downvote"></a>
-                            </div>
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="http://placehold.it/64x64" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">
-                                        @Html.DisplayFor(modelItem => item.ApplicationUser.UserName)
-                                        
-                                    </h4>
-                                    @Html.DisplayFor(modelItem => item.AnswerBody)
-                                </div>
-                            </div>
+                    <div id="answervote-@item.ID" class="upvote">
+                        <a class="upvote"></a>
+                        <span class="count">@Html.DisplayFor(modelItem => item.Count)</span>
+                        <a class="downvote"></a>
+                    </div>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="http://placehold.it/64x64" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                @Html.DisplayFor(modelItem => item.ApplicationUser.UserName)
+
+                            </h4>
+                            @Html.DisplayFor(modelItem => item.AnswerBody)
                         </div>
+                    </div>
+                </div>
                     }
 
-                </div>
-                <!-- Nested Comment
-                      <div class="media">
-                          <a class="pull-left" href="#">
-                              <img class="media-object" src="http://placehold.it/64x64" alt="">
-                          </a>
-                          <div class="media-body">
-                              <h4 class="media-heading">
-                                  Nested Start Bootstrap
-                                  <small>August 25, 2014 at 9:30 PM</small>
-                              </h4>
-                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                          </div>
-                      </div>
-                End Nested Comment -->
-            </div>
         </div>
-    </div>
+        <!-- Nested Comment
+              <div class="media">
+                  <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/64x64" alt="">
+                  </a>
+                  <div class="media-body">
+                      <h4 class="media-heading">
+                          Nested Start Bootstrap
+                          <small>August 25, 2014 at 9:30 PM</small>
+                      </h4>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+</div>
+</div>
+    End Nested Comment -->
+</div>
+</div>
+</div>
 
-    <script type="text/javascript">
-        var upvotecallback = function (data) {
-            $.ajax({
-                url: '../../PulseWebService.asmx/UpdateVote',
-                type: 'POST',
-                data: { id: data.id, score: data.count, type: data.type },
-                success: function (d) {
-                }
-            });
-        };
+<script type="text/javascript">
 
-        var questionId = $('#ID').val(); //Question Id
-        $('#questionVote').upvote({ id: questionId, type: "q", callback: upvotecallback });
+    var upvotecallback = function (data) {
+        $.ajax({
+            url: '../../PulseWebService.asmx/UpdateVote',
+            type: 'POST',
+            data: { id: data.id, score: data.count, type: data.type },
+            success: function (d) {
+            }
+        });
+    };
 
-        var answersCount = $('#Answers_Count').val(); //Answers
-        
-        for (var i = 0; i < answersCount; i++) {
-            var divId = "#answervote-" + i;
-            $(divId).upvote({ id: i, type: "a", callback: upvotecallback });
-        }
+    var questionId = $('#ID').val(); //Question Id
+    $('#questionVote').upvote({ id: questionId, type: "q", callback: upvotecallback });
+
+    var answersCount = $('#Answers_Count').val(); //Answers
+
+    for (var item in answerIdArray) {
+        var id = answerIdArray[item];
+        var divId = "#answervote-" + id;
+        $(divId).upvote({ id: id, type: "a", callback: upvotecallback });
+    }
+
+    //for (var i = 0; i < answersCount; i++) {
+    //    var divId = "#answervote-" + i;
+    //    $(divId).upvote({ id: i, type: "a", callback: upvotecallback });
+    //}
 
     </script>
 
