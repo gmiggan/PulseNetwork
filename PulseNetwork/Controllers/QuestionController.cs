@@ -62,7 +62,7 @@ namespace PulseNetwork.Controllers
             if (ModelState.IsValid)
             {
                 question.UserID = User.Identity.GetUserId();
-                question.DatePosted = DateTime.Today;
+                question.DatePosted = DateTime.Now;
                 question.TimePosted = DateTime.Now.TimeOfDay;
                 db.Questions.Add(question);
                 db.SaveChanges();
