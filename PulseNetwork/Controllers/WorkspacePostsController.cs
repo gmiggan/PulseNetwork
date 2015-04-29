@@ -60,7 +60,7 @@ namespace PulseNetwork.Controllers
                 
                 db.WorkspacePosts.Add(workspacePost);
                 db.SaveChanges();
-                return PartialView(workspacePost);
+                return View(workspacePost);
             }
 
             ViewBag.posterId = new SelectList(db.Users, "Id", "FullName", workspacePost.posterId);

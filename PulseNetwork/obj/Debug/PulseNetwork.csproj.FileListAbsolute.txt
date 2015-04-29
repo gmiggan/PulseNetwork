@@ -235,3 +235,5 @@ C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwo
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.Migrations.UpdateDatabase.resources
+C:\Users\gmigg_000\Documents\Visual Studio 2013\Projects\PulseNetwork\PulseNetwork\obj\Debug\PulseNetwork.csprojResolveAssemblyReference.cache

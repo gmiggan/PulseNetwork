@@ -1,4 +1,8 @@
 ﻿@model PulseNetwork.Models.Workspace
+@using PulseNetwork.Utils
+@{
+    BusinessLogic bl = new BusinessLogic();
+}
 
 <div>
     <h4>Workspace</h4>
@@ -22,25 +26,52 @@
 
     </dl>
 
+    @using (Html.BeginForm("AddUser", "Workspaces", new { id = Model.id }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <hr />
+
+
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <h4>Add new user (Username):</h4>
+                    @Html.Editor("username")
+                    <input type="submit" value="Add" class="btn btn-default" />
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    }
+
+
     <h3>Posts:</h3>
     @foreach (var item in Model.posts)
     {
                     <!-- Comment -->
-    <div class="media">
-        <a class="pull-left" href="#">
-            <img class="media-object" src="http://placehold.it/64x64" alt="">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">
-                @Html.DisplayFor(modelItem => item.poster.UserName)
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://placehold.it/64x64" alt="">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    @Html.DisplayFor(modelItem => item.poster.UserName)
 
-            </h4>
-            @Html.DisplayFor(modelItem => item.postDetails)
+                </h4>
+                @Html.DisplayFor(modelItem => item.postDetails)
+            </div>
         </div>
-    </div>
 
-                
-           
+
+
     }
 
     @if (User.Identity.IsAuthenticated)
@@ -48,7 +79,36 @@
         @Html.Action("Create", "WorkspacePosts", new { workspaceid = Model.id })
     }
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Users in space:
+            </th>
+            <th>
+                Remove
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in bl.FindUsersInWorkspace(Model.id))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.ActionLink("Remove", "RemoveUser", new { id = item.Id, workspaceid = Model.id })
+                </td>
+                <td>
+                   @* @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }) *@
+                </td>
+            </tr>
+        }
+
+    </table>

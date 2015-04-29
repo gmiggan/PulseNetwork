@@ -52,7 +52,7 @@
 
                         </div>
                         <div class="col-md-12">
-                            question posted: @Html.DisplayFor(modelItem => item.DatePosted) by <a href="#">@Html.DisplayFor(modelItem => item.PosterDetails().FullName) </a>
+                            question posted: @Html.DisplayFor(modelItem => item.DatePosted) by <a href="~/Profile/ViewProfile/@item.PosterDetails().Id">@Html.DisplayFor(modelItem => item.PosterDetails().FullName) </a>
                         </div>
                     </div>
                 </div>

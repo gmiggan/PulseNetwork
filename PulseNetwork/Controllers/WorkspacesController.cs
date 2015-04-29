@@ -42,6 +42,35 @@ namespace PulseNetwork.Controllers
             return View(workspace);
         }
 
+        [HttpPost]
+        public ActionResult AddUser(string username, int id)
+        {
+            ApplicationUser user = bl.FindUserByUsername(username);
+            if(!(user == null))
+            {
+                WorkspaceInvite invite = new WorkspaceInvite();
+                invite.userId = user.Id;
+                invite.workspaceid = id;
+                db.WorkspacesInvites.Add(invite);
+                db.SaveChanges();
+            }
+           Workspace workspace = db.Workspaces.Find(id);
+           return RedirectToAction("Details", workspace);
+        }
+
+        
+        public ActionResult RemoveUser(string id, int workspaceid)
+        {
+
+            WorkspaceInvite invite = bl.FindInviteByUserid(id, workspaceid, db);
+            //db.WorkspacesInvites.Attach(invite);
+            db.WorkspacesInvites.Remove(invite);
+            db.SaveChanges();
+            
+            Workspace workspace = db.Workspaces.Find(workspaceid);
+            return RedirectToAction("Details", workspace);
+        }
+
         // GET: Workspaces/Create
         public ActionResult Create()
         {

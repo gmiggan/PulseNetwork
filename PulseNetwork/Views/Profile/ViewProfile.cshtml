@@ -1,5 +1,6 @@
 ﻿@model PulseNetwork.Models.Profile
 @using PulseNetwork.Utils
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Profile";
     var bl = new BusinessLogic();
@@ -58,7 +59,9 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 text-center">
                             <img src="~/Content/img/@Html.DisplayFor(model => model.ApplicationUser.Picture)" alt="" class="center-block img-circle img-thumbnail img-responsive">
+                            @if(User.Identity.GetUserId().Equals(Model.UserID)){
                             @Html.ActionLink("Edit Profile", "Edit", new { id = Model.UserID })
+                            }
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-8">

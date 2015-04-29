@@ -278,6 +278,10 @@
     <Compile Include="Migrations\201504251713427_wegrt.Designer.cs">
       <DependentUpon>201504251713427_wegrt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504291220015_Update-Database.cs" />
+    <Compile Include="Migrations\201504291220015_Update-Database.Designer.cs">
+      <DependentUpon>201504291220015_Update-Database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AnswerModel.cs" />
@@ -701,6 +705,7 @@
     <Content Include="Views\Workspaces\Details.cshtml" />
     <Content Include="Views\Workspaces\Index.cshtml" />
     <Content Include="Views\WorkspacePosts\Create.cshtml" />
+    <Content Include="Views\Workspaces\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -772,6 +777,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504251713427_wegrt.resx">
       <DependentUpon>201504251713427_wegrt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504291220015_Update-Database.resx">
+      <DependentUpon>201504291220015_Update-Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

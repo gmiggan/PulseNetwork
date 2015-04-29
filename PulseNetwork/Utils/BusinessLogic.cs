@@ -20,6 +20,18 @@ namespace PulseNetwork.Utils
             return userskill;
         }
 
+        public WorkspaceInvite FindInviteByUserid(String id, int workspaceId, ApplicationDbContext context)
+        {
+            
+                WorkspaceInvite invite = (WorkspaceInvite)(from u in context.WorkspacesInvites
+                                                           where u.workspaceid == workspaceId &&
+                                                                 u.userId == id
+                                                           select u).SingleOrDefault();
+
+                return invite;
+            
+        }
+
         public List<Workspace> FindUsersWorkspace(string id)
         {
             using (var context = new ApplicationDbContext())
@@ -124,6 +136,21 @@ namespace PulseNetwork.Utils
 
             }
         }
+
+        public ApplicationUser FindUserByUsername(string username)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                ApplicationUser user = (ApplicationUser)(from u in context.Users
+                                                         where u.UserName == username
+                                                         select u).SingleOrDefault();
+
+
+                return user;
+
+            }
+        }
+
 
         public bool canAnswer(Question question, String userid)
         {
