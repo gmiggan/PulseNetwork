@@ -66,7 +66,10 @@ namespace PulseNetwork.Controllers
             //db.WorkspacesInvites.Attach(invite);
             db.WorkspacesInvites.Remove(invite);
             db.SaveChanges();
-            
+            if(id.Equals(User.Identity.GetUserId()))
+            {
+                return RedirectToAction("Index");
+            }
             Workspace workspace = db.Workspaces.Find(workspaceid);
             return RedirectToAction("Details", workspace);
         }

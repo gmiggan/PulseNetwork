@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Create";
 }
+<link rel="stylesheet" type="text/css" href="\Content\bootstrap.css">
 
 <h2>Post New Question:</h2>
 @using (Html.BeginForm())
@@ -42,25 +43,23 @@
     @Scripts.Render("~/Scripts/textboxlist.compressed.js")
     @Scripts.Render("~/Scripts/test.js")
     @Styles.Render("~/Content/test.css")
+    
     <meta charset="utf-8" />
     <title>Autocomplete</title>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script>
         var value = null;
         $(function () {
-            var items = ['France', 'Italy', 'Malta', 'England',
-                'Australia', 'Spain', 'Scotland'];
             var skills = @Html.Raw(Json.Encode(Model.getSkills()));
-
             function split(val) {
                 return val.split(/,\s*/);
             }
             function extractLast(term) {
                 return split(term).pop();
             }
-
             $("#search")
               .autocomplete({
                   minLength: 0,
@@ -73,19 +72,14 @@
                   },
                   select: function (event, ui) {
                       var terms = split(this.value);
-                      // remove the current input
                       terms.pop();
-                      // add the selected item
                       terms.push(ui.item.value);
-                      // add placeholder to get the comma-and-space at the end
                       terms.push("");
                       this.value = terms.join(",");
                       return false;
                   }
               });
         });
-
-        
         $("#txt_name").on("keyup change", function() {
             value = this.value; // omit "var" to make it global
             $("#dom_element").text(value);

@@ -18,21 +18,25 @@ namespace PulseNetwork.Models
 
         private readonly ConcurrentDictionary<string, Question> questions = new ConcurrentDictionary<string, Question>();
 
-        private readonly TimeSpan fetchInterval = TimeSpan.FromMilliseconds(120000);
+        private DateTime now = DateTime.MinValue;
+
+        private readonly TimeSpan fetchInterval = TimeSpan.FromMilliseconds(250);
 
         private readonly Timer timer;
+
+        private bool firstTime;
 
         private QuestionTicker(IHubConnectionContext<dynamic> clients)
         {
             Clients = clients;
 
-            BusinessLogic bl = new BusinessLogic();
-            questions.Clear();
-            string userId = "136382c6-911f-4179-82db-70299baf901c";
-            List<Question> availableQuestions = bl.availableQuestions(userId).OrderByDescending(x => x.DatePosted).ToList();
-            availableQuestions.ForEach(question => questions.TryAdd(question.ID.ToString(), question));
-
-            timer = new Timer(FetchQuestions, null, TimeSpan.FromSeconds(0), fetchInterval);
+            if (now == DateTime.MinValue)
+            {
+                now = DateTime.Now;
+                firstTime = true;
+            }
+            
+            timer = new Timer(FetchQuestions, null, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(30));
         }
 
         public static QuestionTicker Instance
@@ -49,13 +53,30 @@ namespace PulseNetwork.Models
             set;
         }
 
-        public IEnumerable<Question> GetAllQuestions()
+        public List<Question> GetAllQuestions()
         {
-            return questions.Values;
+            return questions.Values.ToList();
         }
 
         private void FetchQuestions(object state)
         {
+            BusinessLogic bl = new BusinessLogic();
+            string userId = "136382c6-911f-4179-82db-70299baf901c";
+
+            questions.Clear();
+            List<Question> availableQuestions = new List<Question>();
+            if (firstTime)
+            {
+                availableQuestions = bl.availableQuestions(userId).OrderBy(x => x.DatePosted).ToList();
+                firstTime = false;
+            }
+            else
+            {
+                availableQuestions = bl.availableQuestions(userId).Where(d => d.DatePosted >= now).OrderBy(x => x.DatePosted).ToList();
+            }
+
+            availableQuestions.ForEach(question => questions.TryAdd(question.ID.ToString(), question));
+
             foreach (var question in questions.Values)
             {
                 BroadcastQuestions(question);

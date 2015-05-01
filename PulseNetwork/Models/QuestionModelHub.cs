@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
+using Newtonsoft.Json;
 
 namespace PulseNetwork.Models
 {
@@ -24,9 +25,14 @@ namespace PulseNetwork.Models
             this.questionTicker = questionTicker;
         }
 
-        public IEnumerable<Question> GetAllQuestions()
+        public string GetAllQuestions()
         {
-            return questionTicker.GetAllQuestions();
+            List<Question> questions = questionTicker.GetAllQuestions();
+
+            var serializedQuestion = JsonConvert.SerializeObject(questionTicker.GetAllQuestions().ToList(), Formatting.None,
+            new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+
+            return serializedQuestion;
         }
     }
 }

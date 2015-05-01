@@ -1,5 +1,4 @@
 ﻿
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @using Microsoft.AspNet.Identity
-
     @if (User.Identity.IsAuthenticated)
     {
         <script>
@@ -23,7 +21,6 @@
             var userAuthorized = false;
         </script>
     }
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -44,36 +41,29 @@
                         <li>@Html.ActionLink("Profile", "ViewProfile", "Profile", new { id = @User.Identity.GetUserId() }, null)</li>
                         <li>@Html.ActionLink("Workspaces", "Index", "Workspaces")</li>
                     }
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Questions", "Index", "Question")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-
-    <div id="mainbar" class="mainbar">
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>
-        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        @*<div class="liveTicker" id="tickerDiv">
+            <h3>Newest Questions</h3>
+            <br />
+            <ul></ul>
+        </div>*@
+        <footer>
+            
+        </footer>
     </div>
-
-    <div class="sidebar" id="tickerDiv">
-        <ul>
-        </ul>
-    </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script type="text/javascript" src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
-
     <script type="text/javascript" src="~/signalr/hubs"></script>
     <script type="text/javascript" src="~/Scripts/question-ticker.js"></script>
-
 </body>
 </html>

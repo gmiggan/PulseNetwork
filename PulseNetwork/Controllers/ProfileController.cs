@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Data.Entity;
 using Newtonsoft.Json;
 using PulseNetwork.Utils;
+using System.Net;
 
 namespace PulseNetwork.Controllers
 {
@@ -35,9 +36,13 @@ namespace PulseNetwork.Controllers
         //Profile/ViewProfile/id
         public ActionResult ViewProfile(string id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             
-            Profile profile = db.Profiles.Find(id);
-            ViewBag.DataPoints = JsonConvert.SerializeObject(skillchart(id));
+                Profile profile = db.Profiles.Find(id);
+                ViewBag.DataPoints = JsonConvert.SerializeObject(skillchart(id));
             
             if (profile == null)
             {

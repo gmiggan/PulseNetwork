@@ -35,12 +35,7 @@ textarea {
     padding-right: 5px;
 }
 
-.sidebar {
-    float: right;
-    width: 15%;
-}
-
-.mainbar{
-    float:left;
-    width: 85%;
+.liveTicker {
+    margin-bottom: 30px;
+    display: none;
 }

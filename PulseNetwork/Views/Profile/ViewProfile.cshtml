@@ -21,31 +21,18 @@
     <script src="~/Scripts/jquery.canvasjs.min.js"></script>
         <script type="text/javascript">
     window.onload = function () {
-
-        //Better to construct options first and then pass it as a parameter
         var chart = new CanvasJS.Chart("chartContainer", {
-
             title: {
                 text: "Skills"
             },
             data: [//array of dataSeries
               { //dataSeries object
-
-                  /*** Change type "column" to "bar", "area", "line" or "pie"***/
                   type: "column",
                   dataPoints: @Html.Raw(ViewBag.DataPoints)
-                 @*        { label: "@skills[0].getSkillName()", y: @skills[0].Score },
-                          { label: "@skills[1].getSkillName()", y: @skills[1].Score },
-                          { label: "@skills[2].getSkillName()", y: @skills[2].Score },*@
-
-
-
                   }
             ]
         });
-
         chart.render();
-
     }
 </script>
     
@@ -58,43 +45,37 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 text-center">
-                            <img src="~/Content/img/@Html.DisplayFor(model => model.ApplicationUser.Picture)" alt="" class="center-block img-circle img-thumbnail img-responsive">
-                            @if(User.Identity.GetUserId().Equals(Model.UserID)){
+                            <img src="~/Content/img/avatar.png" alt="" class="center-block img-circle img-thumbnail img-responsive">
+                            @if (User.Identity.IsAuthenticated) { 
+                            if(User.Identity.GetUserId().Equals(Model.UserID)){
                             @Html.ActionLink("Edit Profile", "Edit", new { id = Model.UserID })
+                            }
                             }
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-8">
                             <h2>@Html.DisplayFor(model => model.ApplicationUser.FullName)</h2>
-                            <p><strong>About: </strong> @Html.DisplayFor(model => model.JobTitle) </p>
-                            <p><strong>Job Title: </strong>@Html.DisplayFor(model => model.Company) </p>
+                            <p><strong>Job Title: </strong> @Html.DisplayFor(model => model.JobTitle) </p>
+                            <p><strong>Company: </strong>@Html.DisplayFor(model => model.Company) </p>
+                            <p><strong>Total Points:</strong> @Html.DisplayFor(model => model.ApplicationUser.ExperiencePoints)</p>
+                            <p><strong>Level: </strong> @Html.DisplayFor(model => model.ApplicationUser.Level)</p>
                             
-                            <p>
-                                <strong>Exp Points: @Html.DisplayFor(model => model.ApplicationUser.ExperiencePoints) </strong>
-                                <div class="progress">
-                                    <div data-percentage="0%" style="width: 50%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </p>
                         </div>
                         <!--/col-->
                         <div class="clearfix"></div>
-                        <div class="col-xs-12 col-sm-4">
-                            <h2><strong> 14 </strong></h2>
-                            <p><small>Questions</small></p>
+                        <div class="col-xs-12 col-sm-6">
+                            <h2 align="center"><strong>Questions </strong></h2>
+                            <p><small></small></p>
                             <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span>@Html.ActionLink("Questions", "UserQuestions", "Question", new { id = Model.ApplicationUser.Id }, null)</button>
                         </div>
                         <!--/col-->
-                        <div class="col-xs-12 col-sm-4">
-                            <h2><strong>10</strong></h2>
-                            <p><small>Answers</small></p>
+                        <div class="col-xs-12 col-sm-6">
+                            <h2 align="center"><strong>Answers</strong></h2>
+                            <p><small></small></p>
                             <button class="btn btn-info btn-block"><span class="fa fa-user"></span>@Html.ActionLink("Answers", "UserAnswers", "Answer", new { id = Model.ApplicationUser.Id }, null) </button>
                         </div>
                         <!--/col-->
-                        <div class="col-xs-12 col-sm-4">
-                            <h2><strong>Level @Html.DisplayFor(model => model.ApplicationUser.Level)</strong></h2>
-                            <p><small></small></p>
-                            <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
-                        </div>
+                        >
                         <!--/col-->
                     </div>
                     <!--/row-->
@@ -124,34 +105,6 @@
 </body>
 </html>
 
-
-    @*<div class="container">
-        <div class="row">
-
-            <div class="well panel panel-default">
-                <div class="panel-body">
-                    <h3>Skills<span class="semi-bold"></span></h3>
-                    <p></p>
-                    <br>
-                    <div class="col-md-11">
-                        <div class="progress">
-                            <div data-percentage=" 0%" style="width: 50%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100">HTML</div>
-                        </div>
-                        <div class="progress">
-                            <div data-percentage="0%" style="width: 60%;" class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100">CSS</div>
-                        </div>
-                        <div class="progress">
-                            <div data-percentage="0%" style="width: 40%;" class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100">JQuery</div>
-                        </div>
-                        <div class="progress">
-                            <div data-percentage="0%" style="width: 20%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100">Bootstrap</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>*@
 
 
 

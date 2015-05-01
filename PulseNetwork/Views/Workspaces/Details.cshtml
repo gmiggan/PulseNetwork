@@ -1,5 +1,6 @@
 ﻿@model PulseNetwork.Models.Workspace
 @using PulseNetwork.Utils
+@using Microsoft.AspNet.Identity
 @{
     BusinessLogic bl = new BusinessLogic();
 }
@@ -23,7 +24,9 @@
         <dd>
             @Html.DisplayFor(model => model.name)
         </dd>
-
+        <dt>
+        @Html.ActionLink("Leave Workspace", "RemoveUser", new { id = @User.Identity.GetUserId(), workspaceid = Model.id })
+        </dt>
     </dl>
 
     @using (Html.BeginForm("AddUser", "Workspaces", new { id = Model.id }))
@@ -59,11 +62,11 @@
                     <!-- Comment -->
         <div class="media">
             <a class="pull-left" href="#">
-                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                <img class="media-object" src="~/Content/img/avatar.png" alt="">
             </a>
             <div class="media-body">
                 <h4 class="media-heading">
-                    @Html.DisplayFor(modelItem => item.poster.UserName)
+                    @Html.DisplayFor(modelItem => item.poster.FullName)
 
                 </h4>
                 @Html.DisplayFor(modelItem => item.postDetails)
@@ -96,6 +99,7 @@
 
         @foreach (var item in bl.FindUsersInWorkspace(Model.id))
         {
+            if (!(item.Id.Equals(User.Identity.GetUserId()))) { 
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.UserName)
@@ -103,12 +107,9 @@
                 <td>
                     @Html.ActionLink("Remove", "RemoveUser", new { id = item.Id, workspaceid = Model.id })
                 </td>
-                <td>
-                   @* @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id }) *@
-                </td>
+                
             </tr>
+        }
         }
 
     </table>

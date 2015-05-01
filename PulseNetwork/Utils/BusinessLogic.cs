@@ -115,7 +115,7 @@ namespace PulseNetwork.Utils
             foreach (var question in allQuestions)
             {
 
-                if (maxLevel(question) <= user.Level)
+                if (maxLevel(question) >= user.Level)
                 {
                     availableQuestions.Add(question);
                 }
@@ -155,7 +155,7 @@ namespace PulseNetwork.Utils
         public bool canAnswer(Question question, String userid)
         {
             ApplicationUser user = db.Users.Find(userid);
-            if (maxLevel(question) <= user.Level)
+            if (maxLevel(question) >= user.Level)
             {
                 return true;
             }
@@ -174,7 +174,8 @@ namespace PulseNetwork.Utils
                 return 1000;
             }
             TimeSpan timeposted = (TimeSpan)question.TimePosted;
-            TimeSpan currentTime = new TimeSpan();
+            TimeSpan currentTime = DateTime.Now.TimeOfDay;
+            
             var maximumlevel = level;
             TimeSpan duration = currentTime - timeposted;
             for (int i = 0; i <= duration.TotalHours; i++)

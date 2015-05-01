@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<PulseNetwork.Models.Workspace>
 @using PulseNetwork.Utils
+@using Microsoft.AspNet.Identity
 @{
     BusinessLogic bl = new BusinessLogic();
 }
@@ -26,15 +27,18 @@
         </td>
         <td>
             @foreach(var user in bl.FindUsersInWorkspace(item.id))
-            { 
-            @Html.DisplayFor(modelItem => user.UserName)  
+            {
+                if (!(user.Id.Equals(User.Identity.GetUserId()))) { 
+            @Html.DisplayFor(modelItem => user.UserName) @: 
+            }
             }
             
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Open", "Details", new { id=item.id }) |
+            @if (item.creatorID.Equals(User.Identity.GetUserId())) { 
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            }
         </td>
     </tr>
 }

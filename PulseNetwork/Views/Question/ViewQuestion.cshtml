@@ -1,6 +1,7 @@
 ﻿@model PulseNetwork.Models.Question
 @using PulseNetwork.Utils
 @using Newtonsoft.Json
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "View";
@@ -75,10 +76,19 @@
                 @Html.HiddenFor(model => model.ID)
                 @Html.HiddenFor(model => model.Answers.Count)
                 <!-- Title -->
-                <h1>@Html.DisplayFor(model => model.QuestionTitle)</h1>
+                <h1>@Html.DisplayFor(model => model.QuestionTitle) @foreach (var tag in Model.getQuestionSkills())
+                {
+                    <span class="label label-info">@tag.skillName</span>
+                }</h1>
                 <!-- Author -->
                 <p class="lead">
                     by <a href="#">@Html.DisplayFor(model => model.PosterDetails().FullName)</a>
+                    <p>
+                    @if (Model.PosterDetails().Id.Equals(User.Identity.GetUserId()))
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+                    }
+                    </p>
                 </p>
                 <hr>
                 <!-- Date/Time -->
@@ -112,7 +122,7 @@
                     </form>
                 *@
 
-                @if(User.Identity.IsAuthenticated)
+                @if(User.Identity.IsAuthenticated && bl.canAnswer(Model, User.Identity.GetUserId()))
                 {
                 @Html.Action("Create", "Answer", new { questionId = Model.ID })
                 }

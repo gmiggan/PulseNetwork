@@ -16,11 +16,15 @@ namespace PulseNetwork.Controllers
         public BusinessLogic bl = new BusinessLogic();
         
 
-        public ActionResult Index(string show)
+        public ActionResult Index(string show, string searchString)
         {
             if(show == "available")
             {
                 return View(bl.availableQuestions(User.Identity.GetUserId()).OrderByDescending(x => x.DatePosted));
+            }
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                return View(db.Questions.Where(p => p.QuestionTitle.ToUpper().Contains(searchString.ToUpper())).OrderByDescending(x => x.DatePosted));
             }
             
             return View(db.Questions.OrderByDescending(x => x.DatePosted).ToList());
@@ -99,12 +103,42 @@ namespace PulseNetwork.Controllers
 
             return View(question);
         }
-        
+
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Question question = db.Questions.Find(id);
+            db.Questions.Remove(question);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        // POST: /Movies/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Question question = db.Questions.Find(id);
+            db.Questions.Remove(question);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
 
         //GET: /Questions/ViewQuestion/id
         
-        public ActionResult ViewQuestion(int id)
+        public ActionResult ViewQuestion(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             Question question = db.Questions.Find(id);
             if (question == null)
             {
